@@ -1,10 +1,4 @@
-#include "push_swap.h"
-
-static int write_error(void)
-{
-    write(2, "Error\n", 6);
-    return (0);
-}
+#include "../push_swap.h"
 
 static void free_split(char **s)
 {
@@ -59,28 +53,6 @@ int parse_split(char *av, t_stack **a)
         i++;
     }
     free_split(num);
-    return (1);
-}
-
-
-int     parse(int ac, char **av, t_stack **a)
-{
-    long n;
-    int i;
-
-    i = 1;
-    while (i < ac)
-    {
-        if (!ft_is_number(av[i]))
-            return (write_error());
-        n = ft_atol(av[i]);
-        if (n < INT_MIN || n > INT_MAX)
-            return (write_error());
-        if (has_duplicate(*a, (int)n))
-            return (write_error());
-        add_back(a, s_new((int)n));
-        i++;
-    }
     return (1);
 }
 
