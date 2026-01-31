@@ -1,20 +1,4 @@
-#include "push_swap.h"
-
-void   sa(t_stack **a)
-{
-    t_stack *first;
-    t_stack *second;
-
-    if (!a || !*a || !(*a)->next)
-        return ;
-    first = *a;
-    second = (*a)->next;
-    first->next = second->next;
-    second->next = first;
-    *a = second;
-    write (1, "sa\n", 3);
-}
-
+#include "../push_swap.h"
 
 void  ra(t_stack **a)
 {
@@ -53,21 +37,6 @@ void  rra(t_stack **a)
     write (1, "rra\n", 4);
 }
 
-void sb(t_stack **b)
-{
-    t_stack *first;
-    t_stack *second;
-
-    if (!b || !*b || !(*b)->next)
-        return ;
-    first = *b;
-    second = (*b)->next;
-    first->next = second->next;
-    second->next = first;
-    *b = second;
-    write (1, "sb\n", 3);
-}
-
 void rb(t_stack **b)
 {
     t_stack *first;
@@ -102,29 +71,4 @@ void rrb(t_stack **b)
     last->next = *b;
     *b = last;
     write (1, "rrb\n", 4);
-}
-void pa(t_stack **a, t_stack **b)
-{
-    t_stack *tmp;
-
-    if (!b || !*b)
-        return ;
-    tmp = *b;
-    *b = (*b)->next;
-    tmp->next = *a;
-    *a = tmp;
-    write (1, "pa\n", 3);
-}
-
-void pb(t_stack **a, t_stack **b)
-{
-    t_stack *tmp;
-
-    if (!a || !*a)
-        return ;
-    tmp = *a;
-    *a = (*a)->next;
-    tmp->next = *b;
-    *b = tmp;
-    write (1, "pb\n", 3);
 }

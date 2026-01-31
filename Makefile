@@ -6,11 +6,13 @@ LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 SRC = main.c \
-      stack.c \
 	  parsing.c \
-	  instruction.c\
-	  stack_helpers.c \
+	  stack_utils/stack.c\
+	  stack_utils/stack_helpers.c \
 	  sort_small.c \
+	  operations/swap.c \
+	  operations/push.c \
+	  operations/rotate.c \
 
 OBJ = $(SRC:.c=.o)
 
