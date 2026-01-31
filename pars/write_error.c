@@ -1,7 +1,7 @@
 #include "../push_swap.h"
 
-int write_error(void)
+int	write_error(void)
 {
-    write(2, "Error\n", 6);
-    return (0);
+	write(2, "Error\n", 6);
+	return (0);
 }
