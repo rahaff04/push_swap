@@ -1,17 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_big.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ralamair <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/01 10:17:26 by ralamair          #+#    #+#             */
+/*   Updated: 2026/02/01 10:17:28 by ralamair         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 static int	find_max_index(t_stack *a)
 {
-	int	max_index;
+	int	max_indx;
 
-	max_index = -1;
+	max_indx = -1;
 	while (a)
 	{
-		if (a->index > max_index)
-			max_index = a->index;
+		if (a->index > max_indx)
+			max_indx = a->index;
 		a = a->next;
 	}
-	return (max_index);
+	return (max_indx);
 }
 
 static int	bits_count(t_stack *a)

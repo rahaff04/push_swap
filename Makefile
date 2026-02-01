@@ -17,7 +17,6 @@ SRC = main.c \
 	  operations/swap.c \
 	  operations/push.c \
 	  operations/rotate.c \
-	  operations/rev_rotate.c \
 
 OBJ = $(SRC:.c=.o)
 

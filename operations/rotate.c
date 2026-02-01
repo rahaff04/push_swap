@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ralamair <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/01 10:30:25 by ralamair          #+#    #+#             */
+/*   Updated: 2026/02/01 12:40:17 by ralamair         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 static void	rotate(t_stack **s)
@@ -16,21 +28,33 @@ static void	rotate(t_stack **s)
 	last->next = first;
 }
 
+static void	rev_rotate(t_stack **s)
+{
+	t_stack	*prev;
+	t_stack	*last;
+
+	if (!s || !*s || !(*s)->next)
+		return ;
+	prev = NULL;
+	last = *s;
+	while (last->next)
+	{
+		prev = last;
+		last = last->next;
+	}
+	prev->next = NULL;
+	last->next = *s;
+	*s = last;
+}
+
+void	rra(t_stack **a)
+{
+	rev_rotate(a);
+	write(1, "rra\n", 4);
+}
+
 void	ra(t_stack **a)
 {
 	rotate(a);
 	write(1, "ra\n", 3);
-}
-
-void	rb(t_stack **b)
-{
-	rotate(b);
-	write(1, "rb\n", 3);
-}
-
-void	rr(t_stack **a, t_stack **b)
-{
-	rotate(a);
-	rotate(b);
-	write(1, "rr\n", 3);
 }

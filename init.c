@@ -1,44 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ralamair <ralamair@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/01 09:26:21 by ralamair          #+#    #+#             */
+/*   Updated: 2026/02/01 12:39:32 by ralamair         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
-
-static t_stack	*get_min_unindexed(t_stack *a)
-{
-	t_stack	*min;
-	int		value;
-
-	min = NULL;
-	value = INT_MAX;
-	while (a)
-	{
-		if (a->index == -1 && a->value < value)
-		{
-			value = a->value;
-			min = a;
-		}
-		a = a->next;
-	}
-	return (min);
-}
 
 static void	set_index(t_stack *a)
 {
-	int		i;
-	int		size;
-	t_stack	*tmp;
-	t_stack	*min;
+	t_stack	*i;
+	t_stack	*j;
+	int		indx;
 
-	size = get_size(a);
-	i = 0;
-	tmp = a;
-	while (tmp)
+	i = a;
+	while (i)
 	{
-		tmp->index = -1;
-		tmp = tmp->next;
-	}
-	while (i < size)
-	{
-		min = get_min_unindexed(a);
-		min->index = i;
-		i++;
+		indx = 0;
+		j = a;
+		while (j)
+		{
+			if (i->value > j->value)
+				indx++;
+			j = j->next;
+		}
+		i->index = indx;
+		i = i->next;
 	}
 }
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ralamair <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/01 09:55:59 by ralamair          #+#    #+#             */
+/*   Updated: 2026/02/01 09:56:02 by ralamair         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -26,6 +38,7 @@ int		get_size(t_stack *a);
 int		find_min(t_stack *a);
 int		find_max(t_stack *a);
 int		get_index(t_stack *a, int v);
+int		is_sorted(t_stack *stack);
 void	sa(t_stack **a);
 void	ss(t_stack **a, t_stack **b);
 void	ra(t_stack **a);

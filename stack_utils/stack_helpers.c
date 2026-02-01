@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_helpers.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ralamair <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/01 10:14:24 by ralamair          #+#    #+#             */
+/*   Updated: 2026/02/01 10:14:26 by ralamair         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 int	get_size(t_stack *a)
@@ -58,4 +70,17 @@ int	get_index(t_stack *a, int v)
 		a = a->next;
 	}
 	return (-1);
+}
+
+int	is_sorted(t_stack *stack)
+{
+	if (!stack)
+		return (1);
+	while (stack->next)
+	{
+		if (stack->value > stack->next->value)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }
