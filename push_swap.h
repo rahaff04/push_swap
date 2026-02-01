@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ralamair <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ralamair <ralamair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 09:55:59 by ralamair          #+#    #+#             */
-/*   Updated: 2026/02/01 09:56:02 by ralamair         ###   ########.fr       */
+/*   Updated: 2026/02/01 14:09:18 by ralamair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_stack	*s_new(int v);
 void	add_back(t_stack **stack, t_stack *n);
 int		has_duplicate(t_stack *stack, int v);
 void	free_stack(t_stack **stack);
-int		write_error(void);
+void	write_error(void);
 int		init_stack(int ac, char **av, t_stack **a);
 int		parse_split(char *av, t_stack **a);
 int		parse(int ac, char **av, t_stack **a);

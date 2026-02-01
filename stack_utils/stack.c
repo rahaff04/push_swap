@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ralamair <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ralamair <ralamair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 10:19:59 by ralamair          #+#    #+#             */
-/*   Updated: 2026/02/01 10:20:01 by ralamair         ###   ########.fr       */
+/*   Updated: 2026/02/01 14:08:44 by ralamair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ void	add_back(t_stack **stack, t_stack *n)
 		return ;
 	}
 	tmp = *stack;
+	if (!tmp)
+	{
+		free_stack(stack);
+		free_stack(&n);
+		return ;
+	}
 	while (tmp->next)
 		tmp = tmp->next;
 	tmp->next = n;

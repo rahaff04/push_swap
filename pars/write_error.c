@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   write_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ralamair <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ralamair <ralamair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 10:19:18 by ralamair          #+#    #+#             */
-/*   Updated: 2026/02/01 10:19:21 by ralamair         ###   ########.fr       */
+/*   Updated: 2026/02/01 13:59:15 by ralamair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	write_error(void)
+void	write_error(void)
 {
 	write(2, "Error\n", 6);
-	return (0);
 }

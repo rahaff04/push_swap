@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pars_split.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ralamair <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ralamair <ralamair@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 10:19:05 by ralamair          #+#    #+#             */
-/*   Updated: 2026/02/01 10:19:06 by ralamair         ###   ########.fr       */
+/*   Updated: 2026/02/01 14:00:22 by ralamair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,21 @@ int	parse_split(char *av, t_stack **a)
 
 	num = ft_split(av, ' ');
 	if (!num)
-		return (write_error());
+	{
+		free_stack(a);
+		free_split(num);
+		write_error();
+		return (0);
+	}
 	i = 0;
 	while (num[i])
 	{
 		if (!check_split(num[i], a))
 		{
 			free_split(num);
-			return (write_error());
+			free_stack(a);
+			write_error();
+			return (0);
 		}
 		i++;
 	}
