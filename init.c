@@ -37,7 +37,7 @@ static void	set_index(t_stack *a)
 static int	parse_args(int ac, char **av, t_stack **a)
 {
 	if (ac < 2)
-		return (1);
+		return (0);
 	if (ac == 2)
 	{
 		if (!parse_split(av[1], a))
